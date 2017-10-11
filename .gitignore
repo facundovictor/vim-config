@@ -1,0 +1,9 @@
+# Pluggins are managed with Plug.vim
+plugged
+
+# Store for vim sessions
+sessions
+
+# Temp vim files
+*.swp
+*.swo
