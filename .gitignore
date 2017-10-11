@@ -10,3 +10,7 @@ sessions
 
 # Ignore history file
 .netrwhist
+
+# Ignore compressed files
+*.tar
+*.tar.gz
