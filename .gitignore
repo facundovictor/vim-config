@@ -7,3 +7,6 @@ sessions
 # Temp vim files
 *.swp
 *.swo
+
+# Ignore history file
+.netrwhist
