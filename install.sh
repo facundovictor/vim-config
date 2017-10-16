@@ -35,6 +35,8 @@ function ensure_dependencies () {
 		"cmake"
 		"python-devel"
 		"python3-devel"
+		"node"
+		"npm"
 	)
 
 	dnf install "${dependencies[@]}"
