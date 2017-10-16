@@ -22,8 +22,22 @@ function remove_previous_version () {
 
 # Install pygementize for coloring preview
 function ensure_dependencies () {
+	local dependencies
+
 	mkdir -p "${INSTALL_DIR}plugged/"
 	find $INSTALL_DIR -type d -exec chmod 777 \{} \;
+
+	dependencies=("
+		automake
+		gcc
+		gcc-c++
+		kernel-devel
+		cmake
+		python-devel
+		python3-devel
+	")
+
+	dnf install "${dependencies[@]}"
 }
 
 ###############################################################################
