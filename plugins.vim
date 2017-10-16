@@ -44,7 +44,7 @@ Plug 'mxw/vim-jsx'
 Plug 'guns/xterm-color-table.vim'
 
 " Autocompletion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-compiler ' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Load on nothing
