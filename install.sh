@@ -18,6 +18,7 @@ function install_vim_config () {
 # Erase all previous fzf installations
 function remove_previous_version () {
 	rm -rf $INSTALL_DIR
+	rm -f ~/.vim ~/.vimrc
 }
 
 # Install pygementize for coloring preview
