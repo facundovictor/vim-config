@@ -44,8 +44,8 @@ function ensure_dependencies () {
 
 # Installation sequence
 remove_previous_version
-ensure_dependencies
 git_clone
+ensure_dependencies
 install_vim_config
 
 echo "Vim config ready for running Plug install."
