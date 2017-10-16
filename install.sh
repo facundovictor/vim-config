@@ -12,6 +12,7 @@ function git_clone () {
 # Execute the vim config official installer
 function install_vim_config () {
 	ln -s $INSTALL_DIR/ ~/.vim
+	ln -s $INSTALL_DIR/init.vim ~/.vimrc
 }
 
 # Erase all previous fzf installations
