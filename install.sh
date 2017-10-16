@@ -22,7 +22,8 @@ function remove_previous_version () {
 
 # Install pygementize for coloring preview
 function ensure_dependencies () {
-	echo "no-op"
+	mkdir -p "${INSTALL_DIR}plugged/"
+	find $INSTALL_DIR -type d -exec chmod 777 \{} \;
 }
 
 ###############################################################################
