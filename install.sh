@@ -22,6 +22,7 @@ function remove_previous_version () {
 
 # Install pygementize for coloring preview
 function ensure_dependencies () {
+	echo "no-op"
 }
 
 ###############################################################################
