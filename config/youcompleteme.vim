@@ -9,5 +9,9 @@ let g:ycm_seed_identifiers_with_syntax = 1
 " let g:ycm_server_python_interpreter = 'env python'
 let g:ycm_python_binary_path = 'python'
 
+" Reference to a default global config file for c-family support.
+" https://github.com/Valloric/YouCompleteMe#the-gycm_global_ycm_extra_conf-option
+let g:ycm_global_ycm_extra_conf = '~/.vim/config/youcompleteme/.ycm_extra_conf.py'
+
 " bind
 nnoremap <leader>jd :YcmComplete GoTo<CR>
