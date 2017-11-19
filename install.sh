@@ -43,6 +43,10 @@ function ensure_dependencies () {
 	dnf install "${dependencies[@]}"
 }
 
+function open_vim_and_install_plugins () {
+	vim -c PlugInstall
+}
+
 ###############################################################################
 
 # Installation sequence
@@ -50,5 +54,6 @@ remove_previous_version
 git_clone
 ensure_dependencies
 install_vim_config
+open_vim_and_install_plugins
 
 echo "Vim config ready for running Plug install."
