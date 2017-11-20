@@ -21,6 +21,15 @@ function remove_previous_version () {
     rm -f ~/.vim ~/.vimrc
 }
 
+# Install the pathed nerd font
+# Reference: https://github.com/ryanoasis/nerd-fonts#patched-fonts
+function ensure_fonts () {
+    # https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/font-info.md#linux--bsd
+    dnf copr enable heliocastro/hack-fonts
+    dnf install hack-fonts
+    fc-cache -f -v
+}
+
 # Install pygementize for coloring preview
 function ensure_dependencies () {
     local dependencies
@@ -38,9 +47,11 @@ function ensure_dependencies () {
         "python3-devel"
         "node"
         "npm"
+        "dnf-plugins-core"
     )
 
     dnf install "${dependencies[@]}"
+    ensure_fonts
 }
 
 # Open vim and install the pluggins using vim-plug
