@@ -28,6 +28,7 @@ function ensure_fonts () {
     dnf copr enable heliocastro/hack-fonts
     dnf install hack-fonts
     fc-cache -f -v
+    # setfont /usr/share/fonts/....
 }
 
 # Install pygementize for coloring preview
