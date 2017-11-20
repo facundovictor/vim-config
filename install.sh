@@ -43,6 +43,7 @@ function ensure_dependencies () {
     dnf install "${dependencies[@]}"
 }
 
+# Open vim and install the pluggins using vim-plug
 function open_vim_and_install_plugins () {
     vim -c PlugInstall
 }
