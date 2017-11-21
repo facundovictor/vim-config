@@ -15,9 +15,6 @@ noremap <C-m> :setlocal spell! spelllang=en_us<CR>
 " Show invisible characters
 noremap <C-k> :setlocal list!<CR>
 
-" Set the mapleader
-let mapleader = "¡"
-
 " Edit my .vimrc file"
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 

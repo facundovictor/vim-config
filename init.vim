@@ -4,6 +4,9 @@
 if exists('py2') && has('python')
 elseif has('python3')
 endif
+
+" Set the mapleader before starting
+let mapleader = "!"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " add all the plugins
