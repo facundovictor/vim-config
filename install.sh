@@ -30,6 +30,7 @@ function ensure_dependencies () {
 
     dependencies=(
         "automake"
+        "xclip"
         "gcc"
         "gcc-c++"
         "kernel-devel"
