@@ -48,6 +48,7 @@ function open_vim_and_install_plugins () {
     vim -c PlugInstall
 }
 
+# Ensure the installed vim has clipboard dependencies
 function check_clipboard_support () {
     local support_clipboard
     local support_xterm_clipboard
