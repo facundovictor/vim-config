@@ -48,9 +48,31 @@ function open_vim_and_install_plugins () {
     vim -c PlugInstall
 }
 
+function check_clipboard_support () {
+    local support_clipboard
+    local support_xterm_clipboard
+    local result
+
+    support_clipboard=$(vim --version | grep '\+clipboard')
+    support_xterm_clipboard=$(vim --version | grep '\+xterm_clipboard')
+
+    result=0;
+
+    if [ "$support_clipboard" == "" ] ; then
+        echo "Clipboard not supported!\n";
+        result=1;
+    fi
+    if [ "$support_xterm_clipboard" == "" ] ; then
+        echo "XTERM Clipboard not supported!\n";
+        result=1;
+    fi
+    return $result;
+}
+
 ###############################################################################
 
 # Installation sequence
+check_clipboard_support
 remove_previous_version
 git_clone
 ensure_dependencies
