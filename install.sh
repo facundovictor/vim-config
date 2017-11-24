@@ -51,22 +51,16 @@ function open_vim_and_install_plugins () {
 function check_clipboard_support () {
     local support_clipboard
     local support_xterm_clipboard
-    local result
 
     support_clipboard=$(vim --version | grep '\+clipboard')
     support_xterm_clipboard=$(vim --version | grep '\+xterm_clipboard')
 
-    result=0;
-
-    if [ "$support_clipboard" == "" ] ; then
-        echo "Clipboard not supported!\n";
-        result=1;
+    if [ "$support_clipboard" == "" ] || [ "$support_xterm_clipboard" == "" ] ; then
+        echo 'Clipboard not supported!';
+		echo 'Install vim-X11 and set the alias vim=vimx';
+        return 1;
     fi
-    if [ "$support_xterm_clipboard" == "" ] ; then
-        echo "XTERM Clipboard not supported!\n";
-        result=1;
-    fi
-    return $result;
+    return 0;
 }
 
 ###############################################################################
