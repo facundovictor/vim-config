@@ -47,3 +47,6 @@ nnoremap <leader>n :cnext<CR>
 nnoremap <leader>N :cprevious<CR>
 nnoremap <leader>g :cfirst<CR>
 nnoremap <leader>G :clast<CR>
+
+" Strip trailing whitespaces
+nnoremap <leader>k :%s/\s\+$//e<CR>
