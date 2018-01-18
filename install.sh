@@ -23,24 +23,57 @@ function remove_previous_version () {
 
 # Install pygementize for coloring preview
 function ensure_dependencies () {
-    local dependencies
+    local -a dependencies
+    local -a rh_deps
+    local -a deb_deps
+	local install
+	local distro
+
+	rh_deps=(
+		"automake"
+		"gcc"
+		"gcc-c++"
+		"kernel-devel"
+		"cmake"
+		"python-devel"
+		"python3-devel"
+		"node"
+		"npm"
+	)
+	deb_deps=(
+		"automake"
+		"gcc"
+		"g++"
+		"linux-headers-generic"
+		"cmake"
+		"python-dev"
+		"python3-dev"
+		"nodejs"
+		"npm"
+	)
+	distro="$(lsb_release -si)"
+
+	case "$distro" in
+		LinuxMint)
+			install="apt-get install -y"
+			dependencies="${deb_deps[*]}"
+		;;
+
+		Fedora)
+			install="yum -y install"
+			dependencies="${rh_deps[*]}"
+		;;
+
+		*)
+			echo "ERROR: The distribution $distro is not supported"
+			exit 1
+		;;
+    esac
 
     mkdir -p "${INSTALL_DIR}plugged/"
-    find $INSTALL_DIR -type d -exec chmod 777 \{} \;
+    find $INSTALL_DIR -type d -exec chmod 0777 \{\} \;
 
-    dependencies=(
-        "automake"
-        "gcc"
-        "gcc-c++"
-        "kernel-devel"
-        "cmake"
-        "python-devel"
-        "python3-devel"
-        "node"
-        "npm"
-    )
-
-    dnf install "${dependencies[@]}"
+    $install ${dependencies[@]}
 }
 
 # Open vim and install the pluggins using vim-plug
