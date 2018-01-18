@@ -26,48 +26,48 @@ function ensure_dependencies () {
     local -a dependencies
     local -a rh_deps
     local -a deb_deps
-	local install
-	local distro
+    local install
+    local distro
 
-	rh_deps=(
-		"automake"
-		"gcc"
-		"gcc-c++"
-		"kernel-devel"
-		"cmake"
-		"python-devel"
-		"python3-devel"
-		"node"
-		"npm"
-	)
-	deb_deps=(
-		"automake"
-		"gcc"
-		"g++"
-		"linux-headers-generic"
-		"cmake"
-		"python-dev"
-		"python3-dev"
-		"nodejs"
-		"npm"
-	)
-	distro="$(lsb_release -si)"
+    rh_deps=(
+        "automake"
+        "gcc"
+        "gcc-c++"
+        "kernel-devel"
+        "cmake"
+        "python-devel"
+        "python3-devel"
+        "node"
+        "npm"
+    )
+    deb_deps=(
+        "automake"
+        "gcc"
+        "g++"
+        "linux-headers-generic"
+        "cmake"
+        "python-dev"
+        "python3-dev"
+        "nodejs"
+        "npm"
+    )
+    distro="$(lsb_release -si)"
 
-	case "$distro" in
-		LinuxMint)
-			install="apt-get install -y"
-			dependencies="${deb_deps[*]}"
-		;;
+    case "$distro" in
+        LinuxMint)
+            install="apt-get install -y"
+            dependencies="${deb_deps[*]}"
+        ;;
 
-		Fedora)
-			install="yum -y install"
-			dependencies="${rh_deps[*]}"
-		;;
+        Fedora)
+            install="yum -y install"
+            dependencies="${rh_deps[*]}"
+        ;;
 
-		*)
-			echo "ERROR: The distribution $distro is not supported"
-			exit 1
-		;;
+        *)
+            echo "ERROR: The distribution $distro is not supported"
+            exit 1
+        ;;
     esac
 
     mkdir -p "${INSTALL_DIR}plugged/"
@@ -91,7 +91,7 @@ function check_clipboard_support () {
 
     if [ "$support_clipboard" == "" ] || [ "$support_xterm_clipboard" == "" ] ; then
         echo 'Clipboard not supported!';
-		echo 'Install vim-X11 and set the alias vim=vimx';
+        echo 'Install vim-X11 and set the alias vim=vimx';
         return 1;
     fi
     return 0;
