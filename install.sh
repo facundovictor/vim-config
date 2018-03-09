@@ -60,7 +60,7 @@ function ensure_dependencies () {
         ;;
 
         Fedora)
-            install="yum -y install"
+            install="dnf -y install"
             dependencies="${rh_deps[*]}"
         ;;
 
