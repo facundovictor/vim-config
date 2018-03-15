@@ -22,6 +22,8 @@ augroup identationGroup
     autocmd Filetype php setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     " Groovy
     autocmd Filetype groovy setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    " Ruby
+    autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     " JavaScript
     " autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     autocmd Filetype javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
