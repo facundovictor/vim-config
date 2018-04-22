@@ -21,7 +21,7 @@ function remove_previous_version () {
     rm -f ~/.vim ~/.vimrc
 }
 
-# Install pygementize for coloring preview
+# Install base dependencies
 function ensure_dependencies () {
     local -a dependencies
     local -a rh_deps
@@ -37,6 +37,8 @@ function ensure_dependencies () {
         "cmake"
         "python-devel"
         "python3-devel"
+        "python2-pip"
+        "python3-pip"
         "node"
         "npm"
     )
@@ -48,6 +50,7 @@ function ensure_dependencies () {
         "cmake"
         "python-dev"
         "python3-dev"
+        "python-pip"
         "nodejs"
         "npm"
     )
