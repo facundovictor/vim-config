@@ -21,7 +21,7 @@ function remove_previous_version () {
     rm -f ~/.vim ~/.vimrc
 }
 
-# Install pygementize for coloring preview
+# Install base dependencies
 function ensure_dependencies () {
     local -a dependencies
     local -a rh_deps
@@ -37,6 +37,8 @@ function ensure_dependencies () {
         "cmake"
         "python-devel"
         "python3-devel"
+        "python2-pip"
+        "python3-pip"
         "node"
         "npm"
     )
@@ -48,6 +50,7 @@ function ensure_dependencies () {
         "cmake"
         "python-dev"
         "python3-dev"
+        "python-pip"
         "nodejs"
         "npm"
     )
@@ -72,6 +75,47 @@ function ensure_dependencies () {
 
     mkdir -p "${INSTALL_DIR}plugged/"
     find $INSTALL_DIR -type d -exec chmod 0777 \{\} \;
+
+    #shellcheck disable=SC2068
+    $install ${dependencies[@]}
+}
+
+# Install plugin dependencies from pip
+function ensure_dependencies_from_pip () {
+    local -a dependencies
+    local -a rh_deps
+    local -a deb_deps
+    local install
+    local distro
+
+    rh_deps=(
+        # http://flake8.pycqa.org/en/latest/
+        # https://www.python.org/dev/peps/pep-0008/
+        "flake8"
+    )
+    deb_deps=(
+        # http://flake8.pycqa.org/en/latest/
+        # https://www.python.org/dev/peps/pep-0008/
+        "flake8"
+    )
+    distro="$(lsb_release -si)"
+
+    case "$distro" in
+        LinuxMint)
+            install="pip install"
+            dependencies="${deb_deps[*]}"
+        ;;
+
+        Fedora)
+            install="pip install"
+            dependencies="${rh_deps[*]}"
+        ;;
+
+        *)
+            echo "ERROR: The distribution $distro is not supported"
+            exit 1
+        ;;
+    esac
 
     #shellcheck disable=SC2068
     $install ${dependencies[@]}
@@ -105,6 +149,7 @@ check_clipboard_support
 remove_previous_version
 git_clone
 ensure_dependencies
+ensure_dependencies_from_pip
 install_vim_config
 open_vim_and_install_plugins
 
