@@ -80,6 +80,20 @@ function ensure_dependencies () {
     $install ${dependencies[@]}
 }
 
+# Install plugin dependencies from pip
+function ensure_dependencies_from_pip () {
+    local -a dependencies
+
+    dependencies=(
+        # http://flake8.pycqa.org/en/latest/
+        # https://www.python.org/dev/peps/pep-0008/
+        "flake8"
+    )
+
+    #shellcheck disable=SC2068
+    pip install ${dependencies[@]}
+}
+
 # Open vim and install the pluggins using vim-plug
 function open_vim_and_install_plugins () {
     vim -c PlugInstall
@@ -108,6 +122,7 @@ check_clipboard_support
 remove_previous_version
 git_clone
 ensure_dependencies
+ensure_dependencies_from_pip
 install_vim_config
 open_vim_and_install_plugins
 
