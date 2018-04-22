@@ -83,15 +83,42 @@ function ensure_dependencies () {
 # Install plugin dependencies from pip
 function ensure_dependencies_from_pip () {
     local -a dependencies
+    local -a rh_deps
+    local -a deb_deps
+    local install
+    local distro
 
-    dependencies=(
+    rh_deps=(
         # http://flake8.pycqa.org/en/latest/
         # https://www.python.org/dev/peps/pep-0008/
         "flake8"
     )
+    deb_deps=(
+        # http://flake8.pycqa.org/en/latest/
+        # https://www.python.org/dev/peps/pep-0008/
+        "flake8"
+    )
+    distro="$(lsb_release -si)"
+
+    case "$distro" in
+        LinuxMint)
+            install="pip install"
+            dependencies="${deb_deps[*]}"
+        ;;
+
+        Fedora)
+            install="pip install"
+            dependencies="${rh_deps[*]}"
+        ;;
+
+        *)
+            echo "ERROR: The distribution $distro is not supported"
+            exit 1
+        ;;
+    esac
 
     #shellcheck disable=SC2068
-    pip install ${dependencies[@]}
+    $install ${dependencies[@]}
 }
 
 # Open vim and install the pluggins using vim-plug
