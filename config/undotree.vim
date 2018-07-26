@@ -13,3 +13,6 @@ map <F5> :UndotreeToggle<CR>
 " |                 diff   |
 " +------------------------+
 let g:undotree_WindowLayout = 4
+
+" Default diff heigh
+let g:undotree_DiffpanelHeight = 20
