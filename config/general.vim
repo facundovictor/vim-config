@@ -16,6 +16,8 @@ set expandtab
 augroup identationGroup
     " Prevent duplicates on multiple .vimrc load
     autocmd!
+    " Vim
+    autocmd Filetype vim setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     " Python
     autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     " PHP
