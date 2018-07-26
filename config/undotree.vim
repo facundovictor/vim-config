@@ -18,4 +18,4 @@ let g:undotree_WindowLayout = 4
 let g:undotree_DiffpanelHeight = 20
 
 " Default tree width
-let g:undotree_SplitWidth = 20
+let g:undotree_SplitWidth = 30
