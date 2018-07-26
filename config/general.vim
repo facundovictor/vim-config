@@ -44,6 +44,8 @@ augroup identationGroup
     autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     " Dockerfile
     autocmd Filetype dockerfile setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    " Shell
+    autocmd FileType sh setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
