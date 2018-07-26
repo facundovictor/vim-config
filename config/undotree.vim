@@ -16,3 +16,6 @@ let g:undotree_WindowLayout = 4
 
 " Default diff heigh
 let g:undotree_DiffpanelHeight = 20
+
+" Default tree width
+let g:undotree_SplitWidth = 20
