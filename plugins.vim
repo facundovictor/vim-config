@@ -17,6 +17,9 @@ Plug 'junegunn/fzf.vim'
 " TagBar: Class browser
 Plug 'majutsushi/tagbar'
 
+" Undo tree
+Plug 'mbbill/undotree'
+
 " Git conflict - mergetool
 Plug 'tpope/vim-fugitive'
 
