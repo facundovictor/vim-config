@@ -60,7 +60,7 @@ set wildmode=list:longest
 set hlsearch
 set incsearch
 
-set paste
+set nopaste
 set ttyfast
 
 set autoindent
