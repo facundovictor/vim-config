@@ -27,8 +27,7 @@ augroup identationGroup
     " Ruby
     autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     " JavaScript
-    " autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-    autocmd Filetype javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     autocmd Filetype typescript setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     autocmd Filetype coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
