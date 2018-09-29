@@ -53,6 +53,9 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " Load on nothing
 Plug 'nacitar/terminalkeys.vim', { 'on': [] }
 
+" Terraform support
+Plug 'hashivim/vim-terraform'
+
 " If in tmux
 if $TMUX =~ "tmux" 
     " Load terminalkeys
