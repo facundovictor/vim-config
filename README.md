@@ -42,3 +42,11 @@ Automatically:
 1 - Clone the repo
 2 - cd into the repo
 3 - ./install.sh
+
+TODO:
+- Evaluate adding snipets 
+- Evaluate moving to neovim instead vim8
+- Evaluate moving from YouCompleteMe to deplete.vim --> https://github.com/Shougo/deoplete.nvim or https://github.com/ncm2/ncm2
+- Evaluate eclim for semantic autocompletion and other alternatives --> http://eclim.org/vim/code_completion.html
+- Java support: https://spacevim.org/use-vim-as-a-java-ide/
+- Cloudformation snippet https://github.com/lunarxlark/aws-cfn-snippet.vim (requires neosnippet)

@@ -6,9 +6,6 @@ set timeoutlen=1000 ttimeoutlen=50
 noremap <A-PageUp> :tabmove -1<CR>
 noremap <A-PageDown> :tabmove +1<CR>
 
-" Toggle tabs display
-noremap <C-k> :setlocal list!<CR>
-
 " Toggle english spelling check
 noremap <C-m> :setlocal spell! spelllang=en_us<CR>
 
