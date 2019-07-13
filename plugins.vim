@@ -7,6 +7,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" JellyBeans
+Plug 'nanotech/jellybeans.vim'
+
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -47,7 +50,7 @@ Plug 'mxw/vim-jsx'
 Plug 'guns/xterm-color-table.vim'
 
 " Autocompletion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer --java-completer' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Load on nothing
