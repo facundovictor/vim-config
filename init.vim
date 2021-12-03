@@ -6,7 +6,7 @@ elseif has('python3')
 endif
 
 " Set the mapleader before starting
-let mapleader = "!"
+let mapleader = "-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " add all the plugins
