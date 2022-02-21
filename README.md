@@ -1,4 +1,4 @@
-# Configuration for VIM 8
+# Configuration for NeoVim and compatible for VIM 8
 
 In progress... from https://gist.github.com/facundovictor/42733b014bcc479f5cd8
 
@@ -45,7 +45,6 @@ Automatically:
 
 TODO:
 - Evaluate adding snipets 
-- Evaluate moving to neovim instead vim8
 - Evaluate moving from YouCompleteMe to deplete.vim --> https://github.com/Shougo/deoplete.nvim or https://github.com/ncm2/ncm2
 - Evaluate eclim for semantic autocompletion and other alternatives --> http://eclim.org/vim/code_completion.html
 - Java support: https://spacevim.org/use-vim-as-a-java-ide/

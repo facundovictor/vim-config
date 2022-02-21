@@ -11,8 +11,10 @@ function git_clone () {
 
 # Execute the vim config official installer
 function install_vim_config () {
+    mkdir -p ~/.config/nvim/
     ln -s $INSTALL_DIR ~/.vim
     ln -s "${INSTALL_DIR}init.vim" ~/.vimrc
+    ln -s "${INSTALL_DIR}/neovim.loader.vim" ~/.config/nvim/init.vim 
 }
 
 # Erase all previous fzf installations
