@@ -59,6 +59,9 @@ Plug 'nacitar/terminalkeys.vim', { 'on': [] }
 " Terraform support
 Plug 'hashivim/vim-terraform'
 
+" Solidity support
+Plug 'tomlion/vim-solidity'
+
 " If in tmux
 if $TMUX =~ "tmux" 
     " Load terminalkeys
