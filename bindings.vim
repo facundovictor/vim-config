@@ -32,12 +32,12 @@ nmap <silent> <C-h> <Plug>(ale_next_wrap)
 noremap <silent> <C-e> :ALEToggle<CR>
 
 " Move lines
-nnoremap <leader>f :m .+1<CR>==
-nnoremap <leader>F :m .-2<CR>==
-inoremap <leader>f <Esc>:m .+1<CR>==gi
-inoremap <leader>F <Esc>:m .-2<CR>==gi
-vnoremap <leader>f :m '>+1<CR>gv=gv
-vnoremap <leader>F :m '<-2<CR>gv=gv
+" nnoremap <leader>f :m .+1<CR>==
+" nnoremap <leader>F :m .-2<CR>==
+" inoremap <leader>f <Esc>:m .+1<CR>==gi
+" inoremap <leader>F <Esc>:m .-2<CR>==gi
+" vnoremap <leader>f :m '>+1<CR>gv=gv
+" vnoremap <leader>F :m '<-2<CR>gv=gv
 
 " Quickfix
 nnoremap <leader>n :cnext<CR>
