@@ -11,6 +11,8 @@ set shiftwidth=4
 set softtabstop=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" Unify macos clipboard
+set clipboard=unnamed
 
 " Specific identations
 augroup identationGroup
